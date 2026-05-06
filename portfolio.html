@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Víctor Miguel Jiménez Moreno</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
 
-    <header>
+    <header class="cabecera">
         <h1>Víctor Miguel Jiménez Moreno</h1>
         <p>Estudiante de 1º DAM | 18 años | La Solana, España</p>
         <p>
@@ -19,7 +20,7 @@
         </p>
     </header>
 
-    <nav>
+    <nav class="nav">
         <ul>
             <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#estudios">Estudios</a></li>
@@ -29,7 +30,7 @@
         </ul>
     </nav>
 
-    <main>
+    <main class="contenido">
 
         <section id="sobre-mi">
             <h2>Sobre mí</h2>
@@ -47,13 +48,13 @@
         <section id="estudios">
             <h2>Estudios</h2>
 
-            <article>
+            <article class="tarjeta">
                 <h3>Grado Superior DAM – Desarrollo de Aplicaciones Multiplataforma</h3>
                 <p><strong>Centro:</strong> IES Modesto Navarro, La Solana</p>
                 <p><strong>Período:</strong> Septiembre 2025 – actualidad</p>
             </article>
 
-            <article>
+            <article class="tarjeta">
                 <h3>Grado Medio SMR – Sistemas Microinformáticos y Redes</h3>
                 <p><strong>Centro:</strong> IES Modesto Navarro, La Solana</p>
                 <p><strong>Período:</strong> Septiembre 2023 – Junio 2025</p>
@@ -65,7 +66,7 @@
         <section id="experiencia">
             <h2>Experiencia laboral</h2>
 
-            <article>
+            <article class="tarjeta">
                 <h3>Informático – Prácticas (FP Dual)</h3>
                 <p><strong>Empresa:</strong> Ayuntamiento de La Solana</p>
                 <p><strong>Lugar:</strong> La Solana, España</p>
@@ -93,17 +94,38 @@
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <p><strong>Teléfono:</strong> +34 625 19 99 23</p>
-            <p>
-                <strong>Email:</strong>
-                <a href="mailto:victormjm1106@gmail.com">victormjm1106@gmail.com</a>
-            </p>
-            <p><strong>Ubicación:</strong> La Solana, 13240, España</p>
+
+            <address class="contacto">
+                <p><strong>Teléfono:</strong> +34 625 19 99 23</p>
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:victormjm1106@gmail.com">victormjm1106@gmail.com</a>
+                </p>
+                <p><strong>Ubicación:</strong> La Solana, 13240, España</p>
+            </address>
+
+            <br>
+
+            <h3>¿Tienes alguna pregunta o sugerencia?</h3>
+            <form class="formulario" action="#" method="get">
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+                <button type="submit">Enviar</button>
+
+            </form>
         </section>
 
     </main>
 
-    <footer>
+    <footer class="pie">
         <p>&copy; 2025 Víctor Miguel Jiménez Moreno – Portfolio personal</p>
     </footer>
 

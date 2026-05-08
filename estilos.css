@@ -68,6 +68,32 @@ hr {
     margin: 20px 0;
 }
 
+.proyectos {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.proyecto {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.proyecto h3 {
+    margin: 0 0 8px 0;
+    color: #1a2a3a;
+    font-size: 15px;
+}
+
+.proyecto p {
+    margin: 0;
+    font-size: 14px;
+}
+
 .contacto {
     font-style: normal;
 }
@@ -113,3 +139,21 @@ hr {
     color: #aaa;
     font-size: 13px;
 }
+
+.pie p {
+    margin: 0 0 8px 0;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+.redes a {
+    color: #ccc;
+    font-size: 20px;
+}
+
+

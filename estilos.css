@@ -10,11 +10,23 @@ body {
     background-color: #1a2a3a;
     color: white;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cabecera p {
     color: #ccc;
     font-size: 14px;
+}
+
+#btnTema {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
 }
 
 .nav {
@@ -28,6 +40,7 @@ body {
     padding: 0;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .nav a {
@@ -69,9 +82,9 @@ hr {
 }
 
 .proyectos {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .proyecto {
@@ -79,8 +92,6 @@ hr {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 15px;
-    flex: 1;
-    min-width: 200px;
 }
 
 .proyecto h3 {
@@ -156,4 +167,24 @@ hr {
     font-size: 20px;
 }
 
+/* Tema oscuro */
+body.oscuro {
+    background-color: #121212;
+    color: #e0e0e0;
+}
 
+body.oscuro .contenido {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.oscuro .tarjeta,
+body.oscuro .proyecto {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+body.oscuro h2 {
+    color: #90caf9;
+    border-bottom-color: #90caf9;
+}

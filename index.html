@@ -12,13 +12,16 @@
 <body>
 
     <header class="cabecera">
-        <h1>Víctor Miguel Jiménez Moreno</h1>
-        <p>Estudiante de 1º DAM | 18 años | La Solana, España</p>
-        <p>
-            Estudiante de Desarrollo de Aplicaciones Multiplataforma con formación previa
-            en Sistemas Microinformáticos y Redes. Interesado en aprender, mejorar mis
-            conocimientos y adquirir experiencia profesional.
-        </p>
+        <div>
+            <h1>Víctor Miguel Jiménez Moreno</h1>
+            <p>Estudiante de 1º DAM | 18 años | La Solana, España</p>
+            <p>
+                Estudiante de Desarrollo de Aplicaciones Multiplataforma con formación previa
+                en Sistemas Microinformáticos y Redes. Interesado en aprender, mejorar mis
+                conocimientos y adquirir experiencia profesional.
+            </p>
+        </div>
+        <button id="btnTema" onclick="cambiarTema()">🌙</button>
     </header>
 
     <nav class="nav">
@@ -156,9 +159,28 @@
         <div class="redes">
             <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
     </footer>
+
+    <script>
+        if (localStorage.getItem("tema") === "oscuro") {
+            document.body.classList.add("oscuro");
+            document.getElementById("btnTema").textContent = "☀️";
+        }
+
+        function cambiarTema() {
+            document.body.classList.toggle("oscuro");
+
+            if (document.body.classList.contains("oscuro")) {
+                localStorage.setItem("tema", "oscuro");
+                document.getElementById("btnTema").textContent = "☀️";
+            } else {
+                localStorage.setItem("tema", "claro");
+                document.getElementById("btnTema").textContent = "🌙";
+            }
+        }
+    </script>
 
 </body>
 </html>

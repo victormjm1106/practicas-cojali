@@ -60,4 +60,43 @@ if (localStorage.getItem("tema") === "oscuro") {
     document.getElementById("btnTema").textContent = "☀️";
 }
 
+async function cargarGithub() {
+    const usuario = "DestroyerReviews";
+    const datos = document.getElementById("datos-github");
+    const reposGithub = document.getElementById("repos-github");
+
+    try {
+        const respuesta = await fetch("https://api.github.com/users/" + usuario);
+        const perfil = await respuesta.json();
+
+        datos.innerHTML = `
+            <img class="foto" src="${perfil.avatar_url}" alt="Foto de GitHub">
+            <h3>${perfil.login}</h3>
+            <p><strong>Repositorios públicos:</strong> ${perfil.public_repos}</p>
+            <p><strong>Seguidores:</strong> ${perfil.followers}</p>
+            <p><a href="${perfil.html_url}" target="_blank">Ver perfil de GitHub</a></p>
+        `;
+
+        const respuestaRepos = await fetch("https://api.github.com/users/" + usuario + "/repos");
+        const repos = await respuestaRepos.json();
+
+        reposGithub.innerHTML = "";
+
+        repos.forEach(function (repo) {
+            reposGithub.innerHTML += `
+                <article class="proyecto">
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description || "Sin descripción"}</p>
+                    <p><strong>Lenguaje:</strong> ${repo.language || "No indicado"}</p>
+                    <p><a href="${repo.html_url}" target="_blank">Abrir repositorio</a></p>
+                </article>
+            `;
+        });
+    } catch (error) {
+        datos.innerHTML = "<p>No se han podido cargar los datos de GitHub.</p>";
+    }
+}
+
 mostrarEstudios();
+cargarGithub();
+

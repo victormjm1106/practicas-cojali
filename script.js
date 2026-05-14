@@ -24,7 +24,7 @@ function mostrarEstudios() {
                 <h3>${estudio.titulo}</h3>
                 <p><strong>Centro:</strong> ${estudio.centro}</p>
                 <p><strong>Período:</strong> ${estudio.periodo}</p>
-                ${estudio.fijo ? "" : `<button onclick="borrarEstudio(${index})">Borrar</button>`}
+                ${estudio.fijo ? "" : `<button class="borrar" onclick="borrarEstudio(${index})">Borrar</button>`}
             </article>
         `;
     });
